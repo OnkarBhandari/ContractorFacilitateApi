@@ -4,13 +4,13 @@ const bodyParser = require('body-parser');
 const { MongoClient, ObjectId } = require('mongodb');
 const mongoose =require('mongoose');
 const e = require('express');
-const CustomerModel=require('./models/companies');
-const Company = require('./models/companies');
+const CustomerModel=require('./moduls/companies');
+const Company = require('./moduls/companies');
 
 mongoose.set('strictQuery',false);
 // Create Express app
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3004;
 
 
 app.get('/api/comoanies',(req,res)=>{
