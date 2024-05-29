@@ -24,7 +24,7 @@ app.get('/api/allcomoanies',async (req,res)=>{
     try {
         const result = await Company.find();
         // companies.save();
-         res.send({"company" :result});
+         res.send({"companies" :result});
         
     } catch (e) {
         res.status(500).json({error:e.message})

@@ -2,47 +2,30 @@ const mongoose =require('mongoose');
 
 const companiesSchame =new mongoose.Schema(
     {
-        _id: {
-            type: Number,
-            required: true,
-          },
-          name: {
-            type: String,
-            required: true,
-          },
-          services: {
-            type: [String],
-            required: true,
-          },
+         _id: Number,
+          name: String,
           contact: {
-            email: {
-              type: String,
-              required: true,
-            },
-            phone: {
-              type: String,
-              required: true,
-            },
             address: {
-              street: {
-                type: String,
-                required: true,
-              },
-              city: {
-                type: String,
-                required: true,
-              },
-              state: {
-                type: String,
-                required: true,
-              },
-              zip: {
-                type: String,
-                required: true,
-              },
+              street: String,
+              city: String,
+              state: String,
+              zip: String,
             },
+            email: String,
+            phone: String,
           },
-    }
+          service: {
+            service_name: String,
+            qty: Number,
+            rate_per_service: Number,
+          },
+          gst: {
+            registration_number: String,
+            rate: Number,
+            state_code: Number,
+            state: String,
+          },
+        }
 );
 const Company = mongoose.model('Company', companiesSchame);
 module.exports = Company;
