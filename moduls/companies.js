@@ -1,8 +1,13 @@
-const mongoose =require('mongoose');   
+const mongoose =require('mongoose'); 
+const { ObjectId } = mongoose.Types;  
 
 const companiesSchame =new mongoose.Schema(
     {
-         _id: Number,
+        _id :{
+          type: mongoose.Schema.Types.ObjectId,
+          default:() => new ObjectId(),
+        },
+         id: Number,
           name: String,
           contact: {
             address: {
